@@ -1,0 +1,187 @@
+.product
+  padding-top: $spacing*4
+  .main-image 
+    margin-bottom: $spacing*2 
+    position: relative
+    img 
+      margin: 0 auto
+    .badge-new
+      position: absolute
+      right: 0
+      bottom: 0
+      width: 3em
+      height: 3em
+      background-color: $red
+      font-size: 2em
+      font-weight: 700
+      text-transform: uppercase
+      color: #fff
+      text-align: center
+      line-height: 3em
+  .thumbs   
+    a, button
+      position: relative
+      border: 1px solid $gray 
+      margin-bottom: $spacing*2
+      display: block
+      padding: 0
+      &:hover 
+        .shadow
+          box-shadow: inset 0px 0px 0px 8px #8cdbf9
+    img 
+      width: 100%   
+    .shadow 
+      position: absolute
+      left: 0
+      right: 0
+      top: 0
+      bottom: 0
+      background-color: transparent
+  .colors
+    +clearfix
+    margin-bottom: $spacing*2
+    p 
+      line-height: 30px
+      float: left
+      margin-right: 1em
+    ul 
+      float: left
+      +h-nav
+    li 
+      margin-right: $spacing  
+    a 
+      width: 30px
+      height: 30px
+      background-color: #000
+      &.red
+        background-color: red
+      &.blue 
+        background-color: blue
+      &.yellow 
+        background-color: yellow
+      &.black 
+        background-color: black
+      &.green
+        background-color: green       
+      &.active  
+        box-shadow: inset 0px 0px 0px 4px #8cdbf9
+      &:hover   
+        box-shadow: inset 0px 0px 0px 4px #8cdbf9
+  .detail     
+    .title 
+      font-weight: 700
+      color: #656565
+      margin-bottom: 0.3em
+      font-size: 2.4em
+    .code 
+      font-size: 1.2em  
+      margin-bottom: 1em
+      color: #656565
+    .price 
+      font-size: 3.2em
+      color: $red
+      font-weight: 700 
+      margin-bottom: 0 
+      line-height: 1
+    .old-price 
+      font-size: 1.2em
+      font-weight: 700
+      color: #b1b2b4
+      text-decoration: line-through 
+      margin-bottom: 0 
+    .discount  
+      font-size: 1.2em
+      font-weight: 700
+      color: $green
+      margin-bottom: $spacing*2
+    .compare 
+      margin-top: $spacing*2
+      color: $primary
+      margin-bottom: $spacing*4
+      i 
+        vertical-align: middle  
+    .button 
+      background-color: $green
+      text-transform: uppercase
+      color: #fff
+      font-weight: 700
+      padding: 0.7em 2.8em   
+      &:hover 
+        background-color: $secondary
+    .quantity   
+      margin-bottom: $spacing*2  
+      span 
+        margin-right: 0.5em
+      input 
+        width: 4em
+        display: inline-block
+        background-color: #fff
+        text-align: center
+      button 
+        width: 34px
+        height: 34px
+        background-color: #afafaf
+        color: #fff    
+        display: inline-block
+    .availability   
+      padding-right: 5.7em
+      margin-top: 2em    
+      color: $green    
+  .description
+    padding-bottom: 40px
+    border-bottom: 1px solid #656565
+    margin-bottom: 40px
+    h2 
+      font-weight: 600
+      font-size: 1.8em
+      color: #656565
+      margin-bottom: 0.5em
+  .specifications
+    margin-bottom: 40px
+    h2 
+      font-weight: 600
+      font-size: 1.8em
+      color: #656565
+      margin-bottom: 0.5em
+    .key 
+      width: 10rem
+    .value 
+      width: 4em 
+  .fidelizare 
+    color: $red
+    p 
+      display: block
+      float: left 
+      line-height: 55px
+      margin-right: 1em
+    .badge-lp
+      background-color: $red
+      border-radius: 100%
+      height: 55px
+      width: 55px
+      text-align: center
+      color: #fff
+      line-height: 1
+      padding-top: 13px   
+      display: block    
+      float: left
+      font-size: 0.9em        
+.variant
+  color: $primary 
+  .btn-rtc
+    min-width: 10em    
+  button     
+    display: block   
+    box-shadow: none 
+    outline: none
+  .dropdown-menu
+    width: 100%
+    button
+      width: 100%
+      background-color: transparent 
+      text-align: left 
+      padding-left: $spacing
+      line-height: 1.6
+      &:hover 
+        background-color: $primary
+        color: #fff      

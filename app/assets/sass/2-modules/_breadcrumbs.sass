@@ -1,0 +1,23 @@
+.breadcrumbs  
+  font-size: 0.9em
+  font-weight: 400
+  padding-right: 0
+  ul
+    +h-nav
+    line-height: 30px
+    padding-top: 10px
+    border-bottom: 1px solid $primary
+  a
+    color: #000   
+    &:hover
+      color: $secondary
+  li
+    &:after
+      font-family: "FontAwesome"
+      content: "\f105"
+      margin-left: 0.2em
+      margin-right: 0.2em
+      font-weight: 400      
+    &:last-child:after    
+      color: $primary
+      content: ""

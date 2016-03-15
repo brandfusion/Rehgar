@@ -1,0 +1,145 @@
+.product-box
+  font-size: 0.9em
+  position: relative
+  span 
+    display: block
+  a 
+    color: #000
+    display: block 
+    height: 100%
+    position: relative
+  .image 
+    height: 190px
+    margin: 0 auto
+    img 
+      max-height: 190px
+      width: auto
+      margin: 0 auto
+  .title 
+    height: 2.4em 
+    line-height: 1.2em
+    overflow: hidden  
+  .availability
+    color: $green  
+    margin-top: 0.6em
+    font-size: 0.9em
+  .code 
+    margin-top: 0.2em
+    font-size: 0.8em  
+    color: #555
+  .price 
+    position: absolute
+    top: 220px
+    right: 0
+    color: $red
+    text-align: right  
+    font-weight: 700
+    font-size: 1.4em
+  .old-price 
+    position: absolute
+    top: 243px
+    text-decoration: line-through
+    right: 0
+    color: $gray
+    text-align: right  
+    font-weight: 600
+    font-size: 1em  
+  .discount 
+    position: absolute
+    top: 260px
+    right: 0
+    color: $green
+    text-align: right  
+    font-weight: 400
+    font-size: 1em   
+  .compare
+    position: absolute
+    top: 260px
+    left: 0
+    color: $green
+    color: $primary
+    font-weight: 400
+    font-size: 1em   
+    .fa 
+      vertical-align: middle  
+  .button 
+    line-height: 40px
+    background-color: $green
+    position: absolute
+    top: 285px
+    left: 0
+    width: 100%
+    display: block   
+    text-align: center 
+    font-weight: 700
+    text-transform: uppercase
+    color: #fff  
+  .badge-new
+    background-color: $red
+    color: #fff
+    font-weight: 800
+    text-transform: uppercase
+    position: absolute
+    right: 0
+    top: 145px
+    height: 40px
+    width: 40px
+    line-height: 40px
+    text-align: center
+  .badge-lp
+    background-color: #e74135
+    border-radius: 100%
+    position: absolute
+    top: 10px
+    left: 10px
+    height: 55px
+    width: 55px
+    text-align: center
+    color: #fff
+    line-height: 1
+    padding-top: 13px    
+  &:hover 
+    .button 
+      background-color: $secondary  
+.product-list 
+  .product-box 
+    height: 325px 
+    margin-bottom: $spacing*2     
+
+.product-carousel 
+  position: relative
+  margin-bottom: $spacing*2
+  h2
+    +heading-section
+    margin-bottom: $spacing
+  &.product-carousel-istoric 
+    .list
+      padding: 20px 20px 0
+  .list
+    padding: 20px 90px 0
+  .list-border
+    border: 1px solid $gray 
+    position: relative
+    +clearfix
+  .list-navigation
+    padding-top: 4em  
+  .flex-prev
+    background-image: url(../img/arrows.jpg)
+    width: 56px
+    background-repeat: no-repeat
+    background-position: 0px 0px
+    height: 257px 
+    position: absolute 
+    left: 15px 
+    top: 50%
+    margin-top: -128px
+  .flex-next
+    background-image: url(../img/arrows.jpg)
+    width: 56px
+    background-repeat: no-repeat
+    background-position: -56px 0px
+    height: 257px   
+    position: absolute 
+    right: 15px
+    top: 50%
+    margin-top: -128px

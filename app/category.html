@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RTC</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width">
+
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.0/flexslider.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/unslider/2.0.3/css/unslider.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/unslider/2.0.3/css/unslider-dots.css">
+
+	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+
+	<!--[if lt IE 9]>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+	<body>
+	<div class="mobile-wrapper">
+		<div class="header-mobile"></div>
+		<div class="main-wrapper">
+			<div class="header">
+				<div class="header-top">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-4 header-navigation">
+								<ul>
+									<li><a href="#"><i class="ion-android-home"></i>Homepage</a></li>
+								</ul>
+							</div>
+							<div class="col-sm-8 header-links">
+								<ul>
+									<li><i class="ion-ios-telephone"></i>201.202.204.000</li>
+									<li><i class="ion-ios-email"></i>comenzy@rtc.ro</li>
+									<li><a href="#"><i class="ion-ios-bell"></i>Newsletter</a></li>
+									<li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
+									<li><a href="#"><i class="fa fa-facebook-official"></i></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="header-middle">
+					<div class="container">
+						<div class="row">						
+								<div class="logo col-sm-4">
+									<a href="homepage.html" title="">
+									<picture>
+										<source
+						        media="(max-width: 640px)"
+						        srcset="assets/img/logo.jpg">
+						        <source
+						        media="(max-width: 1200px)"
+						        srcset="assets/img/logo.jpg">
+										<img src="assets/img/logo.jpg" alt="RTC">
+									</picture>
+									</a>
+								</div>
+								<div class="header-search col-sm-6">
+									<form action="/cauta.aspx" method="GET">
+									  <div class="form-group">
+									    <input type="hidden" name="Spn" id="Spn" value="0">
+									    <input type="text" name="eComQuery" id="q" autocomplete="off" spellcheck="false" placeholder="" class="form-control"><!-- 
+									    --><button type="submit"><i class="ion-ios-search-strong"></i></button>
+									    <div class="instant_search"></div>
+									  </div>
+									</form>
+								</div>
+								<div class="col-sm-2">
+									<a href="#" class="button-login" title="Login">Login</a>
+								</div>
+							
+						</div>
+					</div>				
+				</div>
+			</div>
+			
+			<div class="container">
+				<div class="row">
+					<div class="navigation-category category-collapsed col-sm-3">
+						<button type="button">Produse <i class="fa fa-angle-down"></i></button>
+						<ul class="navigation-main">
+							<li><a href="category.html" title="">Protocol, curatenie si administrare</a></li>
+							<li><a href="category.html" title="">Organizare si arhivare</a></li>
+							<li><a href="category.html" title="">Accesorii de birou</a></li>
+							<li><a href="category.html" title="">Instrumente de scris</a></li>
+							<li><a href="category.html" title="">Articole din hartie</a></li>
+							<li><a href="category.html" title="">Comunicare si prezentare</a></li>
+							<li><a href="category.html" title="">Tehnica de birou</a></li>
+							<li><a href="category.html" title="">Consumabile IT</a></li>
+							<li><a href="category.html" title="">Mobilier</a></li>
+							<li><a href="category.html" title="">Promotionale</a></li>
+							<li><a href="category.html" title="">Scolare</a></li>
+						</ul>
+					</div>					
+					<div class="breadcrumbs col-sm-7">
+						<ul>
+							<li><a href="#" title="">Home</a></li>
+							<li><a href="#" title="">Organizare si arhivare</a></li>
+							<li><a href="#" title="">Bibliorafturi</a></li>
+						</ul>
+					</div>
+					<div class="minicart minicart-border col-xs-2">
+						<p>Cosul meu: <i class="ion-ios-cart"></i></p>
+					</div>
+				</div>				
+			</div>
+		
+			<div class="container">
+				<div class="row">	
+				 <!-- CATEGORY CONTENT -->				
+					<div class="col-sm-3">
+						<div class="sidebar">
+							<div class="sidebar-account">
+								<h3>Contul meu</h3>
+								<div class="link-group">
+									<a href="#" title="">Persoana de contact</a>
+								</div>
+								<div class="link-group">
+									<a href="#" title="">Catalog EOX</a>
+									<a href="#" title="">Lista scurta produse</a>
+								</div>
+								<div class="link-group">
+									<a href="#" title="">Editare date cont</a>
+									<a href="#" title="">Adrese de livrare</a>
+									<a href="#" title="">Centre cost</a>
+									<a href="#" title="">Continutul cosului</a>
+								</div>
+								<div class="link-group">
+									<a href="#" title="">Istoric comenzi</a>
+									<a href="#" title="">Rapoarte</a>
+									<a href="#" title="">Validare comenzi</a>								
+								</div>
+								<div class="link-group">
+									<a href="#" title="">Comanda pentru alta entitate</a>
+									<a href="#" title="">Editeaza date entitati</a>
+									<a href="#" title="">Adaugat delegat</a>
+									<a href="#" title="">Adaugat entitate inferioara</a>								
+								</div>
+								<div class="link-group">
+									<a href="#" title="">Log out</a>
+								</div>
+							</div>
+							<div class="filter-vertical">
+								<h3>Filtre</h3>
+								<div class="item">
+									<h4>Brand</h4>
+									<a href="#" title="" class="filter-active"><i class="fa fa-check-square-o"></i>Leits (<span>20</span>)</a>
+									<a href="#" title=""><i class="fa fa-square-o"></i>Leits (<span>20</span>)</a>
+									<a href="#" title=""><i class="fa fa-square-o"></i>Leits (<span>20</span>)</a>
+									<a href="#" title=""><i class="fa fa-square-o"></i>Leits (<span>20</span>)</a>
+									<a href="#" title=""><i class="fa fa-square-o"></i>Leits (<span>20</span>)</a>
+								</div>
+								<div class="item">
+									<h4>Culoare</h4>
+									<a href="#" title="" class="filter-active"><i class="fa fa-check-square-o"></i>Leits (<span>20</span>)</a>
+									<a href="#" title=""><i class="fa fa-square-o"></i>Leits (<span>20</span>)</a>
+								</div>
+								<div class="item">
+									<h4>Format</h4>
+									<a href="#" title="" class="filter-active"><i class="fa fa-check-square-o"></i>Leits (<span>20</span>)</a>
+									<a href="#" title=""><i class="fa fa-square-o"></i>Leits (<span>20</span>)</a>
+									<a href="#" title=""><i class="fa fa-square-o"></i>Leits (<span>20</span>)</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-9">
+						<div class="main-content">
+							<div class="category-header clearfix">
+								<div class="sortBy">
+								  <!-- Split button -->
+									<div class="btn-group">
+									  <button type="button" class="btn btn-rtc">Sorteaza dupa</button>
+									  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									    <span><i class="fa fa-angle-down"></i></span>
+									  </button>
+									  <ul class="dropdown-menu">
+									    <li><a href="#">Nume</a></li>
+									    <li><a href="#">Pret</a></li>
+									    <li><a href="#">Popularitate</a></li>
+									   <!--  <li role="separator" class="divider"></li>
+									    <li><a href="#">Separated link</a></li> -->
+									  </ul>
+									</div>
+								</div>
+								<div class="pageView">
+									<span class="text">Produse pe pagina</span>
+									<div class="btn-group">
+									  <button type="button" class="btn btn-rtc">20</button>
+									  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									    <span><i class="fa fa-angle-down"></i></span>
+									  </button>
+									  <ul class="dropdown-menu">
+									    <li><a href="#">20</a></li>
+									    <li><a href="#">30</a></li>
+									    <li><a href="#">50</a></li>
+									   <!--  <li role="separator" class="divider"></li>
+									    <li><a href="#">Separated link</a></li> -->
+									  </ul>
+									</div>
+								</div>
+								<div class="displayMode">
+									<a href="#" title=""><i class="fa fa-th-list"></i></a>
+									<a href="#" title=""><i class="fa fa-th"></i></a>
+								</div>
+							</div>
+							<div class="product-list clearfix">
+								<div class="row">
+									<div class="item col-xs-6 col-sm-4 col-lg-3">
+										<div class="product-box">
+											<a href="product.html" title="">
+												<span class="image">
+													<img src="assets/img/item1.jpg" alt="" />
+												</span>
+												<span class="title">Biblioraft Falken Chromocolor, 80mm, 600 col</span>
+												<span class="availability">Disponibil in stoc</span>
+												<span class="code">cod: X0000000</span>
+												<span class="price">2459<sup>99</sup>lei</span>
+												<span class="old-price">5359<sup>19</sup>lei</span>
+												<span class="discount">5% discount</span>												
+												<span class="badge-new">Nou</span>
+												<span class="badge-lp">10 <br/>puncte</span>
+												<span class="button">Adauga in cos</span>
+											</a>
+											<span class="compare">compara <i class="fa fa-square-o"></i></span>
+										</div>										
+									</div>
+									<div class="item col-xs-6 col-sm-4 col-lg-3">
+										<div class="product-box">
+											<a href="product.html" title="">
+												<span class="image">
+													<img src="assets/img/item1.jpg" alt="" />
+												</span>
+												<span class="title">Biblioraft Falken Chromocolor, 80mm, 600 col</span>
+												<span class="availability">Disponibil in stoc</span>
+												<span class="code">cod: X0000000</span>
+												<span class="price">2459<sup>99</sup>lei</span>
+												<span class="old-price">5359<sup>19</sup>lei</span>
+												<span class="discount">5% discount</span>												
+												<span class="button">Adauga in cos</span>
+											</a>
+											<span class="compare">compara <i class="fa fa-square-o"></i></span>
+										</div>										
+									</div>
+									<div class="item col-xs-6 col-sm-4 col-lg-3">
+										<div class="product-box">
+											<a href="product.html" title="">
+												<span class="image">
+													<img src="assets/img/item1.jpg" alt="" />
+												</span>
+												<span class="title">Biblioraft Falken Chromocolor, 80mm, 600 col</span>
+												<span class="availability">Disponibil in stoc</span>
+												<span class="code">cod: X0000000</span>
+												<span class="price">2459<sup>99</sup>lei</span>
+												<span class="old-price">5359<sup>19</sup>lei</span>
+												<span class="discount">5% discount</span>												
+												<span class="button">Adauga in cos</span>
+											</a>
+											<span class="compare">compara <i class="fa fa-square-o"></i></span>
+										</div>										
+									</div>
+									<div class="item col-xs-6 col-sm-4 col-lg-3">
+										<div class="product-box">
+											<a href="product.html" title="">
+												<span class="image">
+													<img src="assets/img/item1.jpg" alt="" />
+												</span>
+												<span class="title">Biblioraft Falken Chromocolor, 80mm, 600 col</span>
+												<span class="availability">Disponibil in stoc</span>
+												<span class="code">cod: X0000000</span>
+												<span class="price">2459<sup>99</sup>lei</span>
+												<span class="old-price">5359<sup>19</sup>lei</span>
+												<span class="discount">5% discount</span>												
+												<span class="button">Adauga in cos</span>
+											</a>
+											<span class="compare">compara <i class="fa fa-square-o"></i></span>
+										</div>										
+									</div>
+									<div class="item col-xs-6 col-sm-4 col-lg-3">
+										<div class="product-box">
+											<a href="product.html" title="">
+												<span class="image">
+													<img src="assets/img/item1.jpg" alt="" />
+												</span>
+												<span class="title">Biblioraft Falken Chromocolor, 80mm, 600 col</span>
+												<span class="availability">Disponibil in stoc</span>
+												<span class="code">cod: X0000000</span>
+												<span class="price">2459<sup>99</sup>lei</span>
+												<span class="old-price">5359<sup>19</sup>lei</span>
+												<span class="discount">5% discount</span>												
+												<span class="button">Adauga in cos</span>
+											</a>
+											<span class="compare">compara <i class="fa fa-square-o"></i></span>
+										</div>										
+									</div>
+									<div class="item col-xs-6 col-sm-4 col-lg-3">
+										<div class="product-box">
+											<a href="product.html" title="">
+												<span class="image">
+													<img src="assets/img/item1.jpg" alt="" />
+												</span>
+												<span class="title">Biblioraft Falken Chromocolor, 80mm, 600 col</span>
+												<span class="availability">Disponibil in stoc</span>
+												<span class="code">cod: X0000000</span>
+												<span class="price">2459<sup>99</sup>lei</span>
+												<span class="old-price">5359<sup>19</sup>lei</span>
+												<span class="discount">5% discount</span>												
+												<span class="button">Adauga in cos</span>
+											</a>
+											<span class="compare">compara <i class="fa fa-square-o"></i></span>
+										</div>										
+									</div>
+									<div class="item col-xs-6 col-sm-4 col-lg-3">
+										<div class="product-box">
+											<a href="product.html" title="">
+												<span class="image">
+													<img src="assets/img/item1.jpg" alt="" />
+												</span>
+												<span class="title">Biblioraft Falken Chromocolor, 80mm, 600 col</span>
+												<span class="availability">Disponibil in stoc</span>
+												<span class="code">cod: X0000000</span>
+												<span class="price">2459<sup>99</sup>lei</span>
+												<span class="old-price">5359<sup>19</sup>lei</span>
+												<span class="discount">5% discount</span>												
+												<span class="button">Adauga in cos</span>
+											</a>
+											<span class="compare">compara <i class="fa fa-square-o"></i></span>
+										</div>										
+									</div>
+									<div class="item col-xs-6 col-sm-4 col-lg-3">
+										<div class="product-box">
+											<a href="product.html" title="">
+												<span class="image">
+													<img src="assets/img/item1.jpg" alt="" />
+												</span>
+												<span class="title">Biblioraft Falken Chromocolor, 80mm, 600 col</span>
+												<span class="availability">Disponibil in stoc</span>
+												<span class="code">cod: X0000000</span>
+												<span class="price">2459<sup>99</sup>lei</span>
+												<span class="old-price">5359<sup>19</sup>lei</span>
+												<span class="discount">5% discount</span>												
+												<span class="button">Adauga in cos</span>
+											</a>
+											<span class="compare">compara <i class="fa fa-square-o"></i></span>
+										</div>										
+									</div>
+									<div class="item col-xs-6 col-sm-4 col-lg-3">
+										<div class="product-box">
+											<a href="product.html" title="">
+												<span class="image">
+													<img src="assets/img/item1.jpg" alt="" />
+												</span>
+												<span class="title">Biblioraft Falken Chromocolor, 80mm, 600 col</span>
+												<span class="availability">Disponibil in stoc</span>
+												<span class="code">cod: X0000000</span>
+												<span class="price">2459<sup>99</sup>lei</span>
+												<span class="old-price">5359<sup>19</sup>lei</span>
+												<span class="discount">5% discount</span>												
+												<span class="button">Adauga in cos</span>
+											</a>
+											<span class="compare">compara <i class="fa fa-square-o"></i></span>
+										</div>										
+									</div>
+									<div class="item col-xs-6 col-sm-4 col-lg-3">
+										<div class="product-box">
+											<a href="product.html" title="">
+												<span class="image">
+													<img src="assets/img/item1.jpg" alt="" />
+												</span>
+												<span class="title">Biblioraft Falken Chromocolor, 80mm, 600 col</span>
+												<span class="availability">Disponibil in stoc</span>
+												<span class="code">cod: X0000000</span>
+												<span class="price">2459<sup>99</sup>lei</span>
+												<span class="old-price">5359<sup>19</sup>lei</span>
+												<span class="discount">5% discount</span>												
+												<span class="button">Adauga in cos</span>
+											</a>
+											<span class="compare">compara <i class="fa fa-square-o"></i></span>
+										</div>										
+									</div>
+									<div class="item col-xs-6 col-sm-4 col-lg-3">
+										<div class="product-box">
+											<a href="product.html" title="">
+												<span class="image">
+													<img src="assets/img/item1.jpg" alt="" />
+												</span>
+												<span class="title">Biblioraft Falken Chromocolor, 80mm, 600 col</span>
+												<span class="availability">Disponibil in stoc</span>
+												<span class="code">cod: X0000000</span>
+												<span class="price">2459<sup>99</sup>lei</span>
+												<span class="old-price">5359<sup>19</sup>lei</span>
+												<span class="discount">5% discount</span>												
+												<span class="button">Adauga in cos</span>
+											</a>
+											<span class="compare">compara <i class="fa fa-square-o"></i></span>
+										</div>										
+									</div>
+									<div class="item col-xs-6 col-sm-4 col-lg-3">
+										<div class="product-box">
+											<a href="product.html" title="">
+												<span class="image">
+													<img src="assets/img/item1.jpg" alt="" />
+												</span>
+												<span class="title">Biblioraft Falken Chromocolor, 80mm, 600 col</span>
+												<span class="availability">Disponibil in stoc</span>
+												<span class="code">cod: X0000000</span>
+												<span class="price">2459<sup>99</sup>lei</span>
+												<span class="old-price">5359<sup>19</sup>lei</span>
+												<span class="discount">5% discount</span>												
+												<span class="button">Adauga in cos</span>
+											</a>
+											<span class="compare">compara <i class="fa fa-square-o"></i></span>
+										</div>										
+									</div>
+								</div>
+							</div>
+							<div class="pagination-navigation">							
+									  <ul class="pagination pagination-custom pull-right">
+										<li class="active disabled"><a href="javascript:void(0);">1</a></li>
+										<li><a href="#">2</a></li>
+										<li><a href="#">3</a></li>
+										<li class="disabled"><a href="javascript:void(0);">...</a></li>
+										<li><a href="#"> <i class="fa fa-angle-right"></i> </a></li>
+										<li><a href="#"> <i class="fa fa-angle-double-right"></i> </a></li>
+									</ul>
+							</div>
+						</div>
+						
+					</div>	
+					
+
+					
+				
+					<!-- CATEGORY CONTENT -->
+					<div class="col-xs-12 product-carousel product-carousel-4">
+						<h2>Top produse din categorie:</h2>
+						<div class="list-border">
+							<div class="list">
+								<ul class="slides">
+									<li class="item">								 
+										<div class="product-box">
+											<a href="product.html" title="">
+												<span class="image">
+													<img src="assets/img/item1.jpg" alt="" />
+												</span>
+												<span class="title">Biblioraft Falken Chromocolor, 80mm, 600 col</span>
+											</a>
+										</div>
+									</li>
+									<li class="item">								 
+										<div class="product-box">
+											<a href="product.html" title="">
+												<span class="image">
+													<img src="assets/img/item1.jpg" alt="" />
+												</span>
+												<span class="title">Biblioraft Falken Chromocolor, 80mm, 600 col</span>
+											</a>
+										</div>
+									</li>
+									<li class="item">								 
+										<div class="product-box">
+											<a href="product.html" title="">
+												<span class="image">
+													<img src="assets/img/item1.jpg" alt="" />
+												</span>
+												<span class="title">Biblioraft Falken Chromocolor, 80mm, 600 col</span>
+											</a>
+										</div>
+									</li>
+									<li class="item">								 
+										<div class="product-box">
+											<a href="product.html" title="">
+												<span class="image">
+													<img src="assets/img/item1.jpg" alt="" />
+												</span>
+												<span class="title">Biblioraft Falken Chromocolor, 80mm, 600 col</span>
+											</a>
+										</div>
+									</li>
+									<li class="item">								 
+										<div class="product-box">
+											<a href="product.html" title="">
+												<span class="image">
+													<img src="assets/img/item1.jpg" alt="" />
+												</span>
+												<span class="title">Biblioraft Falken Chromocolor, 80mm, 600 col</span>
+											</a>
+										</div>
+									</li>
+									<li class="item">								 
+										<div class="product-box">
+											<a href="product.html" title="">
+												<span class="image">
+													<img src="assets/img/item1.jpg" alt="" />
+												</span>
+												<span class="title">Biblioraft Falken Chromocolor, 80mm, 600 col</span>
+											</a>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="list-navigation">
+			          <a href="#" class="flex-prev"></a>
+			          <a href="#" class="flex-next"></a>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-12 product-carousel product-carousel-istoric">
+						<h2>Istoricul tau de navigatie:</h2>
+						<div class="list-border">
+							<div class="list">
+								<ul class="slides">
+									<li class="item">								 
+										<div class="product-box">
+											<a href="product.html" title="">
+												<span class="image">
+													<img src="assets/img/item1.jpg" alt="" />
+												</span>
+												<span class="title">Biblioraft Falken Chromocolor, 80mm, 600 col</span>												
+											</a>
+										</div>
+									</li>
+									<li class="item">								 
+										<div class="product-box">
+											<a href="product.html" title="">
+												<span class="image">
+													<img src="assets/img/item1.jpg" alt="" />
+												</span>
+												<span class="title">Biblioraft Falken Chromocolor, 80mm, 600 col</span>												
+											</a>
+										</div>
+									</li>
+									<li class="item">								 
+										<div class="product-box">
+											<a href="product.html" title="">
+												<span class="image">
+													<img src="assets/img/item1.jpg" alt="" />
+												</span>
+												<span class="title">Biblioraft Falken Chromocolor, 80mm, 600 col</span>												
+											</a>
+										</div>
+									</li>
+									<li class="item">								 
+										<div class="product-box">
+											<a href="product.html" title="">
+												<span class="image">
+													<img src="assets/img/item1.jpg" alt="" />
+												</span>
+												<span class="title">Biblioraft Falken Chromocolor, 80mm, 600 col</span>												
+											</a>
+										</div>
+									</li>
+									<li class="item">								 
+										<div class="product-box">
+											<a href="product.html" title="">
+												<span class="image">
+													<img src="assets/img/item1.jpg" alt="" />
+												</span>
+												<span class="title">Biblioraft Falken Chromocolor, 80mm, 600 col</span>												
+											</a>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="list-navigation">
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-12">
+						<div class="border-line">
+							<img src="assets/img/footer-servicii.jpg" alt="" />
+						</div>						
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+					  <div class="border-line">
+					  	<div class="brands-carousel">
+								<ul class="slides">
+									<li><a href="#" title=""><img src="assets/img/brand-1.jpg" alt="" /></a></li>
+									<li><a href="#" title=""><img src="assets/img/brand-2.jpg" alt="" /></a></li>
+									<li><a href="#" title=""><img src="assets/img/brand-3.jpg" alt="" /></a></li>
+									<li><a href="#" title=""><img src="assets/img/brand-4.jpg" alt="" /></a></li>
+									<li><a href="#" title=""><img src="assets/img/brand-5.jpg" alt="" /></a></li>
+									<li><a href="#" title=""><img src="assets/img/brand-6.jpg" alt="" /></a></li>
+									<li><a href="#" title=""><img src="assets/img/brand-7.jpg" alt="" /></a></li>
+									<li><a href="#" title=""><img src="assets/img/brand-1.jpg" alt="" /></a></li>
+									<li><a href="#" title=""><img src="assets/img/brand-2.jpg" alt="" /></a></li>
+									<li><a href="#" title=""><img src="assets/img/brand-3.jpg" alt="" /></a></li>
+									<li><a href="#" title=""><img src="assets/img/brand-4.jpg" alt="" /></a></li>
+									<li><a href="#" title=""><img src="assets/img/brand-5.jpg" alt="" /></a></li>
+									<li><a href="#" title=""><img src="assets/img/brand-6.jpg" alt="" /></a></li>
+									<li><a href="#" title=""><img src="assets/img/brand-7.jpg" alt="" /></a></li>
+								</ul>
+							</div>
+					  </div>						
+					</div>
+				</div>
+			</div>
+			<div class="footer">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-6">
+							<img src="assets/img/footer-logo.jpg" alt="" />
+							<p>2016 Toate drepturile rezervate RTC</p>
+						</div>
+						<div class="col-sm-2">
+							<ul>
+								<li><a href="#" title="">Scurta istorie</a></li>
+								<li><a href="#" title="">Misiune si valori</a></li>
+								<li><a href="#" title="">Brandul RTC</a></li>
+								<li><a href="#" title="">Presa</a></li>
+								<li><a href="#" title="">Cariere</a></li>
+							</ul>
+						</div>
+						<div class="col-sm-2">
+							<ul>
+								<li><a href="#" title="">Acoperire Nationala</a></li>
+								<li><a href="#" title="">Termeni si conditii</a></li>
+								<li><a href="#" title="">Politica site</a></li>
+								<li><a href="#" title="">ANPC</a></li>
+								<li><a href="#" title="">Contact</a></li>
+							</ul>
+						</div>
+						<div class="col-sm-2">
+							<ul class="social">
+								<li><a href="#" title=""><i class="fa fa-youtube-play"></i></a></li>
+								<li><a href="#" title=""><i class="fa fa-facebook-official"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>			
+			</div>
+			
+			
+			
+		</div>
+	</div>	
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.5.0/lodash.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/unslider/2.0.3/js/unslider-min.js" charset="utf-8"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js" type="text/javascript" charset="utf-8" defer></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.0/jquery.flexslider.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="assets/js/main.min.js"></script>
+
+</body>
+</html>

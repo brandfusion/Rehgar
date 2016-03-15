@@ -1,0 +1,105 @@
+.container
+  +container-fixed
+  @media (min-width: $screen-sm-min)
+    width: $container-sm
+  @media (min-width: $screen-md-min)
+    width: $container-md
+  @media (min-width: $screen-lg-min)
+    width: $container-lg
+  position: relative  
+.row
+  +make-row
+.container-fluid
+  +container-fixed
+  position: relative 
+  width: 100%
+  max-width: 100%
+
++make-grid-columns
+
++make-grid(xs)
+
+@media (min-width: $screen-sm-min)
+  +make-grid(sm)
+
+@media (min-width: $screen-md-min)
+  +make-grid(md)
+
+@media (min-width: $screen-lg-min)
+  +make-grid(lg)  
+
+* 
+  transition: all 0.3s ease-out      
+.text-right
+  text-align: right
+
+.noPaddingLeft  
+  padding-left: 0
+.noPaddingRight
+  padding-right: 0
+.noPadding    
+  padding: 0
+.paragraphHeader
+  h2
+    font-size: 1.8rem
+    font-weight: 700
+    color: #00ACEE
+    margin-bottom: 1em 
+  h3     
+    font-size: 1em
+    font-weight: 700
+    color: #00ACEE
+    margin-bottom: 0.2em 
+.paragraphText    
+  a 
+    color: $primary
+  ul 
+    padding: 0.5em 0
+    li 
+      margin-bottom: 0.5em
+      &:before 
+        content: ""
+        width: 8px
+        height: 8px 
+        background-color: $primary
+        margin-right: 0.3em
+        display: inline-block  
+figure 
+  img 
+    width: 100%        
+.content-2-columns   
+  padding-top: 2em
+  article
+    // margin-bottom: 2em
+    padding-bottom: 2em
+    // border-bottom: 1px solid $primary
+    // padding: 0 0 2em
+    // margin: 0 10px 2em
+  // .row:last-child
+  //   article.col-xs-12
+  //     border: none
+.videoWrapper
+  position: relative
+  padding-bottom: 56.25%
+  padding-top: 25px
+  height: 0
+.videoWrapper iframe
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+.separator
+  height: 1px
+  border-bottom: 1px solid #00ACEE
+  width: 100%
+  margin-bottom: 2em
+.image-top
+  margin-bottom: 1.5em
+#main-content-2-columns-featured
+  text-align: center
+  .paragraphText
+    padding: 0 20% 
+  .paragraphHeader h2   
+  .separator
+    margin-bottom: 0     

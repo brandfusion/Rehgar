@@ -1,0 +1,66 @@
+=h-nav
+  +clearfix
+  list-style-type: none
+  li 
+    float: left
+=v-nav  
+  list-style-type: none
+  li
+    float: none 
+=justify-nav
+  ul
+    list-style-type: none
+  li
+    display: table-cell
+    width: 1%
+
+=placeholder
+  &::-webkit-input-placeholder 
+    @content
+  &:-moz-placeholder           
+    @content
+  &::-moz-placeholder          
+    @content
+  &:-ms-input-placeholder      
+    @content 
+
+=text-overflow
+  overflow: hidden
+  text-overflow: ellipsis
+  white-space: nowrap
+
+=bp-large
+  @media only screen and (max-width: 767px)
+    @content
+=bp-medium
+  @media only screen and (max-width: 991px)
+    @content
+=bp-small
+  @media only screen and (max-width: 1119px)
+    @content
+
+=opacity($opacity)
+  opacity: $opacity
+  $opacity-ie: $opacity * 100
+  filter: alpha(opacity = $opacity-ie) //IE8
+
+=text-truncate
+  overflow: hidden
+  text-overflow: ellipsis
+  white-space: nowrap  
+=heading-section
+  font-size: 1.2em
+  color: $primary
+  font-weight: 600
+// =keyframes($animation-name)
+//   @-webkit-keyframes #{$animation-name}
+//     @content
+//   @-moz-keyframes #{$animation-name}
+//     @content
+//   @-ms-keyframes #{$animation-name}
+//     @content
+//   @-o-keyframes #{$animation-name}
+//     @content
+//   @keyframes #{$animation-name}
+//     @content  
+//     

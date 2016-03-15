@@ -1,0 +1,20 @@
+{
+  "name": "Eva",
+  "version": "1.0.0",
+  "authors": [
+    "Daniel Voicu <daniel.voicu.home@gmail.com>"
+  ],
+  "description": "E-Commerce Solution",
+  "license": "EUPL-1.1",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "~3.3.3"
+  }
+}
