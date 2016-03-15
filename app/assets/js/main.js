@@ -89,26 +89,5 @@ $(function(){
 		$(this).find('.fa').toggleClass("fa-square-o").toggleClass("fa-check-square-o");
 	});  
 
-	//PRODUCT PAGE
-
-	$('.variant [data-option]').on("click", function(){
-		var value = $(this).attr("data-option");
-		var text = $(this).html();
-		var select = $(this).parents(".variant").find('[data-select]')
-		select.html(text);
-		select.attr("data-select",value);
-	});
-
-	$('[data-increase]').on("click", function(){
-		var input = $(this).parent().find("input")
-		var value =  parseFloat(input.val()) + 1;
-		input.val(value);
-	});
-	$('[data-decrease]').on("click", function(){
-		var input = $(this).parent().find("input")
-		var value = parseFloat(input.val()) - 1;
-		if(input.val() >=2 ) {
-			input.val(value);
-		}
-	});
+	
 });
