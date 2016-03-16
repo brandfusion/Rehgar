@@ -1,17 +1,38 @@
 .btn
-	border-radius: 0
-.btn-rtc	
-	background-color: #fff 
-	border: 1px solid $primary
+  border-radius: 0
+.btn-rtc  
+  background-color: #fff 
+  border: 1px solid $primary
 .btn-primary 
-	background-color: $primary	
-	color: #fff
-	border-color: $primary 
-	padding: 6px 20px
-	&:hover 
-		background-color: $secondary
+  background-color: $primary  
+  color: #fff
+  border-color: $primary 
+  padding: 6px 20px
+  &:hover 
+    background-color: $secondary
 .btn-group>.btn+.dropdown-toggle 
-	padding-left: 10px
-	padding-right: 10px	
+  padding-left: 10px
+  padding-right: 10px 
 .open>.dropdown-toggle.btn-primary:focus, .open>.dropdown-toggle.btn-primary:hover
-	background-color: $secondary	
+  background-color: $secondary  
+.btn-green
+  background-color: $green
+  text-transform: uppercase
+  color: #fff
+  font-weight: 700
+  padding: 0.7em 2.8em   
+  &:hover 
+    background-color: $secondary
+    color: #fff
+.btn-finalize 
+  @extend .btn-green 
+.btn-continue-shop
+  @extend .btn-green 
+  background-color: $primary 
+  &:hover
+    background-color: $secondary 
+.btn-clear-cart
+  @extend .btn-green 
+  background-color: #aaa 
+  &:hover
+    background-color: $secondary           

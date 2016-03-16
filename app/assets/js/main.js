@@ -89,5 +89,5 @@ $(function(){
 		$(this).find('.fa').toggleClass("fa-square-o").toggleClass("fa-check-square-o");
 	});  
 
-	
+	$('[data-toggle="tooltip"]').tooltip();
 });

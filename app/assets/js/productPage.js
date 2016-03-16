@@ -21,13 +21,12 @@ $(function(){
 	});
 
 	$('[data-stock]').on("focusout",function(){	
-		var stock = $(this).attr("data-stock");
-		var value = $(this).val();
-		var parent = $(this).parent();
-		console.log(parent[0]);
+		var stock = parseFloat($(this).attr("data-stock"));
+		var value = parseFloat($(this).val());
+		var parent = $(this).parent();	
+		console.log(value);	
 		if (value > stock) {
-			$(this).val(stock);			
-			alertify.parent(parent[0]);
+			$(this).val(stock);	
 			alertify.logPosition("center center");
 			alertify.alert("value > stock");
 		}
@@ -37,5 +36,17 @@ $(function(){
 		var value= $(this).find("img").attr("src");
 		$('.main-image img').attr("src", value);
 	});
-
+	// $('#product-page-order').on("submit", function(e){		
+	// 	var variantValue = $(this).find("#VariantID").val();
+	// 	if (variantValue === "") {
+	// 		e.preventDefault();	
+	// 		alertify.logPosition("center center");
+	// 		alertify.alert("Alegeti o optiune");
+	// 	}
+	// });
+	$('.disabled-submit').on("click", function(e){			
+		e.preventDefault();
+		alertify.logPosition("center center");
+		alertify.alert("Alegeti o optiune");
+	});
 });

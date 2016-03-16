@@ -18,7 +18,8 @@
       color: #fff
       text-align: center
       line-height: 3em
-  .thumbs   
+  .thumbs
+    margin-bottom: 1em   
     a, button
       position: relative
       border: 1px solid $gray 
@@ -108,6 +109,8 @@
       padding: 0.7em 2.8em   
       &:hover 
         background-color: $secondary
+      &[disabled]:hover 
+        background-color: gray  
     .quantity   
       margin-bottom: $spacing*2  
       span 
@@ -146,7 +149,7 @@
     .key 
       width: 10rem
     .value 
-      width: 4em 
+      width: 15em 
   .fidelizare 
     color: $red
     p 
@@ -185,3 +188,20 @@
       &:hover 
         background-color: $primary
         color: #fff      
+.badges
+  +clearfix
+  margin-bottom: 1em
+  .item 
+    float: left
+    margin-right: 1em
+.disabled-submit
+  position: relative
+  display: inline-block
+  &:before 
+    content: ""
+    position: absolute
+    left: 0
+    right: 0
+    top: 0
+    bottom: 0
+    z-index: 99
