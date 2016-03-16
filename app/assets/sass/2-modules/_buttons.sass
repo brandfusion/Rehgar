@@ -15,24 +15,28 @@
   padding-right: 10px 
 .open>.dropdown-toggle.btn-primary:focus, .open>.dropdown-toggle.btn-primary:hover
   background-color: $secondary  
-.btn-green
+.btn-main
   background-color: $green
   text-transform: uppercase
   color: #fff
   font-weight: 700
-  padding: 0.7em 2.8em   
+  padding: 0 2.8em   
+  line-height: 2.5em
   &:hover 
     background-color: $secondary
     color: #fff
+.btn-blue
+  @extend .btn-main
+  background-color: $primary    
 .btn-finalize 
-  @extend .btn-green 
+  @extend .btn-main 
 .btn-continue-shop
-  @extend .btn-green 
+  @extend .btn-main 
   background-color: $primary 
   &:hover
     background-color: $secondary 
 .btn-clear-cart
-  @extend .btn-green 
+  @extend .btn-main 
   background-color: #aaa 
   &:hover
     background-color: $secondary           
