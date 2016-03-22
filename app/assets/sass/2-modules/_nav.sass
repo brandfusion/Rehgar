@@ -1,4 +1,6 @@
 .navigation-category
+	position: relative
+	z-index: 99
 	button 
 		background-color: $primary
 		color: #fff 
@@ -15,18 +17,33 @@
 			line-height: 40px
 	.navigation-main 
 		background-color: #effaff
-		// border: 1px solid $primary		
-		a 
-			height: 40px
-			line-height: 40px
-			color: #000
-			padding-left: 2*$spacing
-			display: block
-			font-size: 0.9em
-			border-bottom: 1px solid #D0E8F3
+		// border: 1px solid $primary	
+		.level-2	
+			a 
+				height: 40px
+				line-height: 40px
+				color: #000
+				padding-left: 2*$spacing
+				display: block
+				font-size: 0.9em
+				border-bottom: 1px solid #D0E8F3
+				&:hover 
+					background-color: $primary
+					color: #fff		
 			&:hover 
-				background-color: $primary
-				color: #fff				
+				.M2
+					display: block		
+		.level-3
+			a	
+				line-height: 1.8em
+				height: auto
+				border: none	
+				padding: 0
+				text-transform: capitalize
+				&:hover 
+					color: #000
+					background-color: transparent
+					text-decoration: underline	
 .navigation-homepage
 	+justify-nav
 	a 
@@ -40,8 +57,8 @@
 			background-color: $secondary
 			color: #fff 
 .category-expanded 
-	position: relative
-	ul 
+	position: relative	
+	ul.navigation-main 
 		position: absolute
 		z-index: 2
 		left: 10px
@@ -49,7 +66,7 @@
 		top: 100%
 .category-collapsed
 	position: relative
-	ul 
+	ul.navigation-main 
 		display: none
 		z-index: 2		
 		position: absolute
@@ -57,5 +74,18 @@
 		right: 10px
 		top: 38px
 	&:hover 
-		ul 
+		ul.navigation-main 
 			display: block	
+.M2
+	background: #fff 
+	position: absolute
+	left: 100%
+	top: 0
+	bottom: 0
+	width: 877px
+	display: none 
+	column-count: 3
+	padding: 1em
+	box-shadow: 0px 0px 6px #aaa
+
+	
