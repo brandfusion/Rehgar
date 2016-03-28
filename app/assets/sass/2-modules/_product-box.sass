@@ -18,7 +18,7 @@
   .title 
     height: 2.4em 
     line-height: 1.2em
-    overflow: hidden  
+    overflow: hidden      
   .availability
     color: $green  
     margin-top: 0.6em
@@ -101,11 +101,71 @@
   &:hover 
     .button 
       background-color: $secondary  
+.product-box--list
+  overflow: visible
+  height: auto
+  .order
+    position: absolute
+    bottom: 2em 
+    left: $spacing
+    right: $spacing
+  .detail
+    min-height: 19em  
+  .title   
+    height: auto
+    line-height: 1.4   
+    font-size: 1.8em
+    font-weight: 700
+  .badge-lp
+    left: auto
+    top: 0
+    right: 0  
+  .badge-new
+    right: auto
+    left: 0
+    top: 0
+  .code
+    position: absolute
+    left: 0
+    top: 80px
+  .price
+    top: 80px       
+  .old-price 
+    top: 103px
+  .discount 
+    top: 120px
+  .shortDescription
+    height: 7em  
+    overflow: hidden
+    margin-bottom: 1em
+  .button
+    top: 175px    
+  .availability
+    position: absolute
+    top: 55px
+    left: 0
+  &:hover 
+    .button 
+      background-color: $green
+      &:hover 
+        background-color: $secondary  
 .product-list 
   .product-box 
     height: 325px 
-    margin-bottom: $spacing*2     
-
+    margin-bottom: $spacing*2 
+  .product-box--list
+    height: auto
+    margin-bottom: $spacing*2      
+    border-bottom: 1px solid $primary
+  .quantity
+    input
+      width: 4em
+      display: inline-block
+      background-color: #fff
+      text-align: center  
+ 
+  form 
+    float: right      
 .product-carousel 
   position: relative
   margin-bottom: $spacing*2
@@ -143,3 +203,11 @@
     right: 15px
     top: 50%
     margin-top: -128px
+.btn-group
+  .dropdown-menu
+    li 
+      line-height: 34px    
+      * 
+        width: 100%
+        display: block
+        text-align: left  

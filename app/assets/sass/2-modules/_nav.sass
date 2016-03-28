@@ -17,6 +17,7 @@
       line-height: 40px
   .navigation-main 
     background-color: #effaff
+    min-height: 440px
     // border: 1px solid $primary 
     .level-2  
       a 
@@ -57,6 +58,17 @@
     &:hover 
       background-color: $secondary
       color: #fff 
+  li:hover 
+    .M1
+      display: block 
+  .level-1 
+    position: relative       
+  .level-2
+    text-align: left
+    min-width: 15em
+    a 
+      padding: 0 $spacing  
+      text-align: left
 .category-expanded 
   position: relative  
   ul.navigation-main 
@@ -90,4 +102,13 @@
   padding: 1em 
   color: #000000
   border: 2px solid #8ADCF2
-  
+.M1 
+  display: none
+  position: absolute
+  left: 0
+  top: 100%
+  z-index: 2
+  li
+    display: block
+    float: none
+    width: auto
