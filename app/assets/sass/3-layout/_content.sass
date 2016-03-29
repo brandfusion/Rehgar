@@ -1,0 +1,20 @@
+.sidebar-list
+  padding-top: 2em
+  .item 
+    margin-bottom: 2em
+  a 
+    display: block
+    color: #000
+    line-height: 1.6
+
+    &.active
+      font-weight: 600
+      &:before
+        background-color: $primary
+    &:before
+      content: ""
+      background-color: #8cdbf9
+      width: 10px
+      height: 10px
+      display: inline-block
+      margin-right: 0.5em
