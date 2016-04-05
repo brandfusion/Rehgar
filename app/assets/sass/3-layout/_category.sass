@@ -9,11 +9,18 @@
       color: $primary
     &.active
       // color: $primary
-      font-weight: 600  
+      font-weight: 700  
+      // &:before 
+      //   font-family: "FontAwesome"
+      //   content: "\f105"
+      //   margin-right: 0.5em
       &:before 
-        font-family: "FontAwesome"
-        content: "\f105"
-        margin-right: 0.5em
+        content: ""
+        background-color: #8cdbf9
+        width: 10px
+        height: 10px
+        display: inline-block
+        margin-right: 0.5em  
 
   .link-group
     margin-bottom: $spacing*2
@@ -65,7 +72,10 @@
     line-height: 1.2
 .displayMode 
   float: right 
-  font-size: 1.8em   
+  font-size: 1.8em  
+  button
+    background-color: transparent
+    padding: 0 
 .filter-vertical
   border: 1px solid #c7c7c7
   padding: 10px 
@@ -101,3 +111,30 @@
     color: #fff
   i 
     transition: all 0s linear  
+.view-box
+  width: 34px
+  height: 34px
+  background-image: url(../img/cat_thumbnail.svg)
+  background-repeat: no-repeat
+  background-size: cover
+  display: block
+  &:hover    
+    background-image: url(../img/cat_thumbnailHover.svg) 
+.view-list
+  display: block
+  width: 34px
+  height: 34px
+  background-image: url(../img/cat_lista.svg)
+  background-repeat: no-repeat
+  background-size: cover
+  &:hover    
+    background-image: url(../img/cat_listaHover.svg) 
+.view-table
+  display: block
+  width: 34px
+  height: 34px
+  background-image: url(../img/cat_tabel.svg)
+  background-repeat: no-repeat
+  background-size: cover
+  &:hover    
+    background-image: url(../img/cat_tabelHover.svg)           

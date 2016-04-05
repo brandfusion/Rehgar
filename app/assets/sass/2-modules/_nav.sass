@@ -18,7 +18,7 @@
   .navigation-main 
     background-color: #effaff
     min-height: 440px
-    // border: 1px solid $primary 
+    border: 1px solid $primary 
     .level-2  
       a 
         height: 40px
@@ -40,8 +40,7 @@
         height: auto
         border: none  
         padding: 0
-        color: inherit
-        text-transform: capitalize
+        color: inherit        
         &:hover 
           color: #000
           background-color: transparent
@@ -67,8 +66,15 @@
     text-align: left
     min-width: 15em
     a 
+      background-color: #fff
+      border: 1px solid $primary
       padding: 0 $spacing  
       text-align: left
+      color: $primary
+      border-top: none
+      &:hover 
+        background-color: $primary
+        color: #fff
 .category-expanded 
   position: relative  
   ul.navigation-main 

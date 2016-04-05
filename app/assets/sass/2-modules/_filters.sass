@@ -1,0 +1,21 @@
+.filter-wrapper 
+  h4 
+    padding-left: 1.2em
+    font-weight: 700
+  input[type="checkbox"] 
+    display: none
+  input[type="checkbox"] + label
+    font-weight: 400
+    padding-left: 1.2em
+    // background-color: blue
+    background-image: url(../img/cat_checkbox.svg)
+    background-repeat: no-repeat
+    background-position: 0 3px
+    background-size: 13px
+    .badge 
+      font-weight: 600
+      color: #000
+      background-color: transparent
+      padding: 0
+  input[type="checkbox"]:checked + label  
+    background-image: url(../img/cat_checkboxActive.svg)
