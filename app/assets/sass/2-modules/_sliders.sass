@@ -1,9 +1,13 @@
 .main-slider
+  border: 1px solid $primary
+  padding-bottom: 39px
+  margin-top: 20px
   .item
-    height: 440px
+    height: 380px
     width: 100%
     background-repeat: no-repeat
     background-size: cover
+    border-bottom: 1px solid $primary
   a   
     display: block
     height: 100%  
@@ -22,57 +26,79 @@
     width: 100% 
 .middle-zone    
   .unslider-arrow
+    background-color: transparent
     &.next
-      left: auto
-      right: 10px
+      // left: auto
+      // right: 10px
+      // top: 50%
+      // background-color: #000
+      // color: #fff
+      // width: 20px
+      // text-align: center
+      // height: 40px  
+      // line-height: 40px
+      // margin-top: -20px 
+      // &:hover 
+      //   background-color: $primary  
+      background-image: url(../img/arrows.jpg)
+      width: 56px
+      background-repeat: no-repeat
+      background-position: -58px 0px
+      height: 257px
+      position: absolute
+      right: 15px
       top: 50%
-      background-color: #000
-      color: #fff
-      width: 20px
-      text-align: center
-      height: 40px  
-      line-height: 40px
-      margin-top: -20px 
-      &:hover 
-        background-color: $primary  
+      margin-top: -128px
+      text-align: right
+      display: block
     &.prev 
-      right: auto
-      left: 10px
+      // right: auto
+      // left: 10px
+      // top: 50%
+      // background-color: #000
+      // color: #fff
+      // width: 20px
+      // text-align: center
+      // height: 40px  
+      // line-height: 40px
+      // margin-top: -20px 
+      // &:hover 
+      //   background-color: $primary       
+      background-image: url(../img/arrows.jpg)
+      width: 56px
+      background-repeat: no-repeat
+      background-position: 2px 0px
+      height: 257px
+      position: absolute
+      left: 15px
       top: 50%
-      background-color: #000
-      color: #fff
-      width: 20px
-      text-align: center
-      height: 40px  
-      line-height: 40px
-      margin-top: -20px 
-      &:hover 
-        background-color: $primary        
+      margin-top: -128px 
+      text-align: left
+      display: block
 .unslider-nav 
   position: absolute
-  right: 20px
-  bottom: 10px
+  width: 100%
+  bottom: 6px
   ol li   
-    width: 10px
-    height: 10px
+    width: 20px
+    height: 20px
     border-radius: 100%
-    border: 1px solid $primary
-    border: none
+    border: 2px solid #3bc9f7
+    // border: none
     position: relative
-    background-color: #000
-    // &.unslider-active:before
-    //  content: ""
-    //  position: absolute
-    //  top: 4px
-    //  left: 4px
-    //  width: 10px
-    //  height: 10px
-    //  background-color: $primary
-    //  border-radius: 100%
-    &.unslider-active
-      background-color: $primary
-.unslider-nav
-  padding-top: 10px   
+    background-color: #fff
+    &.unslider-active:before
+     content: ""
+     position: absolute
+     top: 3px
+     left: 3px
+     width: 10px
+     height: 10px
+     background-color: #3bc9f7
+     border-radius: 100%
+    // &.unslider-active
+    //   background-color: $primary
 
+  
 
   

@@ -27,8 +27,8 @@ $(function(){
 	  $('.middle-slider').unslider({
 	   nav: false,
 	   arrows: {		
-			prev: '<a class="unslider-arrow prev"><i class="fa fa-angle-left"></i></a>',
-			next: '<a class="unslider-arrow next"><i class="fa fa-angle-right"></i></a>',
+			prev: '<a class="unslider-arrow prev"></a>',
+			next: '<a class="unslider-arrow next"></a>',
 		}
 	 });
 	  $('.product-carousel-3 .list').flexslider({
