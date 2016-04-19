@@ -22,15 +22,86 @@ $(function(){
   //   productCarousel4Items.vars.maxItems = gridSize;
   // });
 	 $('.main-slider').unslider({
-	 	arrows: false
+	 	arrows: false,
+	 	infinite: true
 	 });
 	  $('.middle-slider').unslider({
 	   nav: false,
+	   infinite: true,
 	   arrows: {		
 			prev: '<a class="unslider-arrow prev"></a>',
 			next: '<a class="unslider-arrow next"></a>',
 		}
 	 });
+
+	 $('.carousel-4').slick({
+	 	dots: false,
+	  infinite: true,
+	  speed: 300,
+	  touchMove: false,
+	  slidesToShow: 4,
+	  slidesToScroll: 1,
+	  prevArrow: $(this).find(".flex-prev"),
+	  nextArrow: $(this).find(".flex-next"),
+	  responsive: [
+	    {
+	      breakpoint: 1200,
+	      settings: {
+	        slidesToShow: 3,
+	        slidesToScroll: 1
+	      }
+	    },
+	    {
+	      breakpoint: 768,
+	      settings: {
+	        slidesToShow: 2,
+	        slidesToScroll: 1
+	      }
+	    },
+	    {
+	      breakpoint: 480,
+	      settings: {
+	        slidesToShow: 1,
+	        slidesToScroll: 1
+	      }
+	    }
+	  ]
+	 }); 
+	 $('.brands-carousel .carousel').slick({
+	 	dots: false,
+	 	autoplay: true,
+	  infinite: true,
+	  speed: 300,
+	  arrows: false,
+	  touchMove: false,
+	  slidesToShow: 7,
+	  slidesToScroll: 1,
+	  // prevArrow: $(this).find(".flex-prev"),
+	  // nextArrow: $(this).find(".flex-next"),
+	  responsive: [
+	    {
+	      breakpoint: 1200,
+	      settings: {
+	        slidesToShow: 5,
+	        slidesToScroll: 1
+	      }
+	    },
+	    {
+	      breakpoint: 768,
+	      settings: {
+	        slidesToShow: 3,
+	        slidesToScroll: 1
+	      }
+	    },
+	    {
+	      breakpoint: 480,
+	      settings: {
+	        slidesToShow: 2,
+	        slidesToScroll: 1
+	      }
+	    }
+	  ]
+	});
 	  $('.product-carousel-3 .list').flexslider({
 	    animation: "slide",
 	    animationLoop: true,
@@ -64,16 +135,16 @@ $(function(){
       move: 1,
       customDirectionNav: $(this).find(".list-navigation a")
    });
-	  $('.brands-carousel').flexslider({
-	    animation: "slide",
-	    animationLoop: true,
-	    itemWidth: 210,
-	    itemMargin: 20,
-	    minItems: getGridSize7(),
-      maxItems: getGridSize7(),
-      controlNav: false,
-      move: 1      
-   });
+	  // $('.brands-carousel').flexslider({
+	  //   animation: "slide",
+	  //   animationLoop: true,
+	  //   itemWidth: 210,
+	  //   itemMargin: 20,
+	  //   minItems: getGridSize7(),
+   //    maxItems: getGridSize7(),
+   //    controlNav: false,
+   //    move: 1      
+   // });
 	  $('.product-carousel-istoric .list').flexslider({
 	    animation: "slide",
 	    animationLoop: true,
