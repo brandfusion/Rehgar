@@ -23,7 +23,8 @@ $(function(){
   // });
 	 $('.main-slider').unslider({
 	 	arrows: false,
-	 	infinite: true
+	 	infinite: true,
+    aniation: 'fade'
 	 });
 	  $('.middle-slider').unslider({
 	   nav: false,
@@ -67,6 +68,37 @@ $(function(){
 	    }
 	  ]
 	 }); 
+   $('.carousel-3').slick({
+    dots: false,
+    infinite: true,
+    speed: 300,
+    touchMove: false,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+   }); 
 	 $('.brands-carousel .carousel').slick({
 	 	dots: false,
 	 	autoplay: true,
