@@ -42,21 +42,64 @@
     font-weight: 700  
 .header-cos 
   border-bottom: 1px solid #eee
-.rtc-cart-quantity
-  background-color: rgba(2, 176, 89, 0.8)
-  color: #fff
-  width: 1.5rem
+.rtc-cart-quantity 
+  color: $green
+  width: 2rem
   height: 1.5rem
   display: block
   position: absolute
   right: 10em
   z-index: 2
-  right: 0.4em
-  top: 0em
-  line-height: 1.5rem
-  -webkit-border-radius: 100%
+  right: 0.4rem
+  top: -0.6rem
+  line-height: 1.5rem 
   border-radius: 100%
   margin-right: 0rem
-  font-size: 0.7em
+  font-size: 1em
   font-style: normal
   font-weight: 600
+  text-align: center
+.minicart-detail
+  display: none
+  opacity: 0
+  border: 1px solid $green
+  padding: 1rem
+  width: 20rem
+  position: absolute
+  top: 100%
+  right: 0.7rem
+  z-index: 2
+  background-color: #fff
+  font-size: 0.9em
+  transition: all 0.5s ease-in-out
+  text-align: right
+  p:last-child
+    margin-bottom: 0
+  .modifier
+    color: $green
+    font-weight: 600  
+  .inner-wrapper
+    text-align: left
+    border-bottom: 1px solid $green
+    margin-bottom: 1rem  
+    padding-bottom: 1rem
+  // .btn-main 
+  //   font-weight: 400  
+.minicart:hover 
+  .minicart-detail
+    display: block
+    opacity: 1   
+.minicart
+  .go-to-cart 
+    line-height: 40px
+    color: $primary
+    margin-bottom: 0
+    text-align: center
+    line-height: 40px
+    // color: #00acee
+    display: block
+    margin-bottom: 0
+    text-align: center
+    margin-left: -20px
+    padding-right: 0
+    padding-left: 30px

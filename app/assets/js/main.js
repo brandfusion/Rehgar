@@ -248,7 +248,9 @@ $(function(){
   })
   .done(function(response) {
     var data = response;
-    $('.rtc-cart-quantity').html(data[0].quantity);
+    $('[data-minicart-quantity]').html(data[0].lines);
+    $('[data-minicart-price]').html(data[0].price);
+    $('[data-minicart-currency]').html(data[0].currency);
   });
   
 });

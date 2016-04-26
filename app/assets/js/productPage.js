@@ -35,6 +35,9 @@ $(function(){
 		e.preventDefault();
 		var value= $(this).find("img").attr("src");
 		$('.main-image img').attr("src", value);
+		$('html, body').animate({
+        scrollTop: $(".main-image").offset().top
+    }, 1000);
 	});
 	// $('#product-page-order').on("submit", function(e){		
 	// 	var variantValue = $(this).find("#VariantID").val();
@@ -49,4 +52,8 @@ $(function(){
 		alertify.logPosition("center center");
 		alertify.alert("Alegeti o optiune");
 	});
+	if($('.main-image').length > 0) {
+		$('.main-image').zoom();
+	}
+	
 });
