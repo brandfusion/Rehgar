@@ -25,11 +25,11 @@ $(function(){
 		var value = parseFloat($(this).val());
 		var parent = $(this).parent();	
 		console.log(value);	
-		if (value > stock) {
-			$(this).val(stock);	
-			alertify.logPosition("center center");
-			alertify.alert("value > stock");
-		}
+		// if (value > stock) {
+		// 	$(this).val(stock);	
+		// 	alertify.logPosition("center center");
+		// 	alertify.alert("value > stock");
+		// }
 	});
 	$('.thumbs a').on("click", function(e){
 		e.preventDefault();
@@ -55,5 +55,40 @@ $(function(){
 	if($('.main-image').length > 0) {
 		$('.main-image').zoom();
 	}
+	if($("#input-compare").length > 0) {
+		var groupId= $('#input-compare').attr("data-group-id");
+		var productId= $('#input-compare').attr("data-product-id");
+		$.ajax({
+			url: '/Files/Extra/GetProductsFromGroup.aspx',
+			type: 'POST',
+			data: {groupId: groupId, productId: productId}
+		})
+		.done(function(data) {
+			var data = $.parseJSON(data);			
+			var keys = Object.keys(data);
+			options = "";
+			for (var i = 0; i < keys.length; i++) {
+			    var val = data[keys[i]];
+			    var key = keys[i];
+			    options += '<option value="' + key + '">' + val + '</option>';			  
+			}
+			$('#input-compare').append(options);
+		})
+		.fail(function(data) {
+			console.log("error downloading compare items");
+		})
+		.always(function(data) {
+			// console.log("complete");
+		});
+		$('.compare-input-box button').on("click", function(){
+			var groupId = $('#input-compare').attr("data-group-id");
+			var productId = $('#input-compare').attr("data-product-id");
+			var compareId = $('#input-compare').val();
+			var link = "/Default.aspx?ID=2&compare=" + productId + "," + compareId + "&dataGroup=" + groupId;
+			window.location.href = link;
+		});
+	}
+	
+	
 	
 });
