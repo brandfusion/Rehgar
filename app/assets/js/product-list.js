@@ -42,7 +42,12 @@ $(function(){
     e.preventDefault();
     var link = "/Default.aspx?ID=82&groupId=" + $(this).attr("data-group-id") + "&productId=" +  $(this).attr("data-product-id");
      $('#product-modal iframe').attr("src", link);
-     $('#product-modal').bPopup();
+     $('#product-modal').bPopup({
+       closeClass:'close',
+       onClose: function() {            
+            console.log("empty")
+        }
+     });
     // $.ajax({
     //   url: link,
     //   type: 'GET',
@@ -59,6 +64,12 @@ $(function(){
     //   console.log("complete");
     // });
     
+  });
+  $('#product-modal').on("click", "#product-page-order button", function(){
+    setTimeout(function(){
+      console.log("intra");
+      $('#product-modal').bPopup().close();
+    });
   });
 
 });

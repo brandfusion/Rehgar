@@ -235,10 +235,26 @@
 #input-compare
   width: 15em  
 #product-modal 
+  background-color: #fff
   display: none
   width: 70vw
+  max-width: 900px
   height: 70vh
+  max-height: 450px
   iframe
     width: 100%
     height: 100%
-    border: 2px solid $primary
+    border: 4px solid $primary
+  .close 
+    position: absolute
+    right: 2px
+    top: 2px
+    background-color: $primary
+    color: #fff
+    z-index: 2
+    opacity: 1
+    vertical-align: middle
+    font-size: 1em
+    font-weight: 300
+    width: 2rem
+    height: 2rem  
