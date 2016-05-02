@@ -146,10 +146,7 @@ $(function(){
 	  ]
 	});
 	
-	$('.compare').on("click", function(){
-		$(this).find('.fa').toggleClass("fa-square-o").toggleClass("fa-check-square-o");
-    $('.compare-input-box').toggleClass("visible");
-	});  
+ 
 
 	$('[data-toggle="tooltip"]').tooltip();
   $.ajax({

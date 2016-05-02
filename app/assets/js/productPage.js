@@ -31,6 +31,10 @@ $(function(){
 		// 	alertify.alert("value > stock");
 		// }
 	});
+	$('.product .compare').on("click", function(){
+		$(this).find('.fa').toggleClass("fa-square-o").toggleClass("fa-check-square-o");
+    $('.compare-input-box').toggleClass("visible");
+	}); 
 	$('.thumbs a').on("click", function(e){
 		e.preventDefault();
 		var value= $(this).find("img").attr("src");
@@ -52,9 +56,9 @@ $(function(){
 		alertify.logPosition("center center");
 		alertify.alert("Alegeti o optiune");
 	});
-	if($('.main-image').length > 0) {
-		$('.main-image').zoom();
-	}
+	// if($('.main-image').length > 0) {
+	// 	$('.main-image').zoom();
+	// }
 	if($("#input-compare").length > 0) {
 		var groupId= $('#input-compare').attr("data-group-id");
 		var productId= $('#input-compare').attr("data-product-id");
@@ -88,7 +92,15 @@ $(function(){
 			window.location.href = link;
 		});
 	}
-	
-	
+	$('.main-image').on("click", function(){
+			var content = $(this).html();
+			$('.main-image-popup .bmodal-content').html(content);
+			$('.main-image-popup').bPopup();
+	});
+	$('.main-image-popup .close').on("click", function(){
+    setTimeout(function(){      
+      $('.main-image-popup').bPopup().close();
+    });
+  });
 	
 });

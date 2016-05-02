@@ -1,3 +1,15 @@
+window.buildItemsCompareLink = function(){
+  var compareString = "/Default.aspx?ID=2&compare=";
+  var groupId = $('[data-group-id-category]').attr("data-group-id-category");
+  $(".product-list .product-box.selected").each(function(){
+    compareString += $(this).attr("data-product-id") + ","    
+  });
+  compareString += "&dataGroup=" + groupId
+  if($(".product-list .product-box.selected").length == 3) {
+    window.location.href = compareString;
+  }
+  return compareString
+}
 $(function(){
   //Compare
   if($("#input-compare-add").length > 0) {
@@ -72,4 +84,22 @@ $(function(){
     });
   });
 
+  var compareString="";
+  $('.product-box .compare').on("click", function(){
+    if($(this).parents(".product-box").hasClass("selected")) {
+      $(this).parents(".product-box").removeClass("selected");
+      $(this).find('.fa').toggleClass("fa-square-o").toggleClass("fa-check-square-o");
+      compareString = buildItemsCompareLink();
+      console.log(compareString);
+    } else {
+      if($(".product-list .product-box.selected").length == 3) {
+        alert("Ati depasit numarul de produse ce pot fi comparata simultan.");
+        return false;
+      }
+      $(this).parents(".product-box").addClass("selected");
+      $(this).find('.fa').toggleClass("fa-square-o").toggleClass("fa-check-square-o");
+      compareString = buildItemsCompareLink();
+      console.log(compareString);
+    }    
+  }); 
 });
