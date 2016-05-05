@@ -2,11 +2,14 @@
   font-size: 0.9em
   font-weight: 400
   padding-right: 0
+  margin-bottom: $spacing*2
+  .product & 
+    margin: 0
   ul
     +h-nav
-    line-height: 30px
-    padding-top: 10px
-    border-bottom: 1px solid $primary
+    line-height: 2
+    // padding-top: 10px
+    // border-bottom: 1px solid $primary
   a
     color: #000   
     &:hover
@@ -19,5 +22,6 @@
       margin-right: 0.2em
       font-weight: 400      
     &:last-child:after    
+      display: none
       color: $primary
       content: ""
