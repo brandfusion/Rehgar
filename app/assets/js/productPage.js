@@ -56,9 +56,9 @@ $(function(){
 		alertify.logPosition("center center");
 		alertify.alert("Alegeti o optiune");
 	});
-	// if($('.main-image').length > 0) {
-	// 	$('.main-image').zoom();
-	// }
+	if($('.main-image').length > 0) {
+		$('.main-image').zoom();
+	}
 	if($("#input-compare").length > 0) {
 		var groupId= $('#input-compare').attr("data-group-id");
 		var productId= $('#input-compare').attr("data-product-id");
@@ -95,6 +95,8 @@ $(function(){
 	$('.main-image').on("click", function(){
 			var content = $(this).html();
 			$('.main-image-popup .bmodal-content').html(content);
+			$('.main-image-popup .bmodal-content').find(".zoomImg").remove();
+
 			$('.main-image-popup').bPopup();
 	});
 	$('.main-image-popup .close').on("click", function(){

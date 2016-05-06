@@ -58,3 +58,45 @@
   color: #000000
   margin-bottom: 1em      
   line-height: 2
+
+#compareOutterWrapper
+  z-index: 99
+  background-color: rgba($primary, 0.8)
+  transform: translateY(70px)
+  // display: none
+  position: fixed 
+  left: 0
+  right: 0
+  bottom: 0
+  text-align: right
+  &.opened 
+    // display: block 
+    transform: translateY(0px)
+  #compareWrapper      
+    text-align: right
+    padding: 0.5em 0 0.3em    
+    display: inline-block
+  .item 
+    text-align: left
+    display: inline-block
+    color: #fff
+    width: 200px
+    font-size: 0.8em
+    .image 
+      width: 50px
+    .media-body 
+      vertical-align: middle  
+    a 
+      color: #fff  
+  button 
+    float: right
+    line-height: 2
+    margin-top: 1.5em
+    color: #fff
+    background-color: #2A3B8F
+    padding: 0 1em    
+    font-weight: 300
+    &:hover 
+      background-color: #15246B
+
+
