@@ -67,6 +67,7 @@ $(function(){
       var groupId = getQueryVariable("dataGroup");
       var arguments = getQueryVariable("compare") + ',' + $('#input-compare-add').val();
       var link = "/Default.aspx?ID=2&compare=" + arguments  + "&dataGroup=" + groupId;
+
       if($("#compare-list .item").length >= 3) {
         var errorMessage = $('#compare-list').attr("data-error-toomanyitems");
         alert(errorMessage);
@@ -79,7 +80,22 @@ $(function(){
   $('.quick-view').on("click", function(e){
     e.preventDefault();
     var link = "/Default.aspx?ID=82&groupId=" + $(this).attr("data-group-id") + "&productId=" +  $(this).attr("data-product-id");
-     $('#product-modal iframe').attr("src", link);
+     // $('#product-modal iframe').attr("src", link);
+     $.ajax({
+       url: link,
+       type: 'GET',
+       dataType: 'html'
+     })
+     .done(function(response) {
+       $('#product-modal #popup-content').html(response);
+     })
+     .fail(function(response) {
+       console.log("error");
+     })
+     .always(function(response) {
+       console.log("complete");
+     });
+     
      $('#product-modal').bPopup({
        closeClass:'close',
        onClose: function() {            
@@ -140,10 +156,25 @@ $(function(){
       $(this).parents(".product-box").addClass("selected");
       $(this).find('.fa').toggleClass("fa-square-o").toggleClass("fa-check-square-o");
       compareString = buildItemsCompareLink();
+      var compareProductsList= compareString.split("compare=")[1].split("&")[0];
+      var compareGroupId= compareString.split("compare=")[1].split("&dataGroup=")[1]
+      console.log(compareProductsList);
+      Cookies.set('compareItems', compareProductsList);      
       console.log(compareString);
     }    
-  }); 
+  });
+  // if($(".product-list").length > 0) {
+  //   var group = $(".product-list").attr("data-group-id-category");
+  //   console.log(group);
+  //   console.log(Cookies.get('compareGroup'));
+  //   if (group == Cookies.get('compareGroup')) {
+  //     console.log("same");
+  //   } else {
+  //     console.log("different");
 
+  //   }
+  // }
+  
   $("#compareOutterWrapper button").on("click", function(){
     var compareString = "/Default.aspx?ID=2&compare=";
     $("#compareOutterWrapper .item").each(function(){
@@ -154,4 +185,37 @@ $(function(){
     window.location.href = compareString;
 
   });
+
+  $("#popup-content").on("click",".product-variant", function(){
+    value = $(this).attr("data-value");
+    name = $(this).html();   
+    link = $(this).attr("data-link"); 
+    $(this).parents(".variant").find("[data-select]").attr("data-select", value);
+    $(this).parents(".variant").find("[data-select]").html(name);
+    $(this).parents(".product").find(".add-to-cart").attr("data-variant-id", value);
+    $(this).parents(".product").find(".add-to-cart").attr("data-link", link);
+  });
+  $("#popup-content").on("focusout",".quantity input", function(){
+    var value=$(this).val();
+    $(this).parents(".product").find(".add-to-cart").attr("data-quantity", value);
+  });
+   $("#popup-content").on("click",".add-to-cart", function(e){
+    e.preventDefault();
+      var link = $(this).attr("data-link") + "&CartCmd=add&ProductId=" +  $(this).attr("data-product-id") + "&VariantId=" +  $(this).attr("data-variant-id") + "&Quantity=" +  $(this).attr("data-quantity");
+
+      $.ajax({
+        url: link,
+        type: 'POST'
+      })
+      .done(function(response) {
+        console.log("success");
+      })
+      .fail(function() {
+        console.log("error");
+      })
+      .always(function() {
+        console.log("complete");
+      });
+      
+   });
 });
