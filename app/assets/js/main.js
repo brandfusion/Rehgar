@@ -14,6 +14,19 @@ window.replaceUrlParam = function(url, paramName, paramValue){
     }
     return url + (url.indexOf('?')>0 ? '&' : '?') + paramName + '=' + paramValue 
 }
+window.minicart = function() {
+  $.ajax({
+    url: '/Default.aspx?ID=81',
+    type: 'GET',
+    dataType: 'json'
+  })
+  .done(function(response) {
+    var data = response;
+    $('[data-minicart-quantity]').html(data[0].lines);
+    $('[data-minicart-price]').html(data[0].price);
+    $('[data-minicart-currency]').html(data[0].currency);
+  });
+}
 $(function(){	
 	
 	 $('.main-slider').unslider({
@@ -146,19 +159,9 @@ $(function(){
 	  ]
 	});
 	
- 
+  minicart();
 
 	$('[data-toggle="tooltip"]').tooltip();
-  $.ajax({
-    url: '/Default.aspx?ID=81',
-    type: 'GET',
-    dataType: 'json'
-  })
-  .done(function(response) {
-    var data = response;
-    $('[data-minicart-quantity]').html(data[0].lines);
-    $('[data-minicart-price]').html(data[0].price);
-    $('[data-minicart-currency]').html(data[0].currency);
-  });
+  
   
 });
