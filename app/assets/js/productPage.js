@@ -31,10 +31,11 @@ $(function(){
 		// 	alertify.alert("value > stock");
 		// }
 	});
-	$('.product .compare').on("click", function(){
-		$(this).find('.fa').toggleClass("fa-square-o").toggleClass("fa-check-square-o");
-    $('.compare-input-box').toggleClass("visible");
-	}); 
+	// $('.product .compare').on("click", function(){
+	// 	$(this).find('.fa').toggleClass("fa-square-o").toggleClass("fa-check-square-o");
+ //    // $('.compare-input-box').toggleClass("visible");
+    
+	// }); 
 	$('.thumbs a').on("click", function(e){
 		e.preventDefault();
 		var value= $(this).find("img").attr("src");

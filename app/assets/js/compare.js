@@ -273,7 +273,7 @@ $(function(){
     }
 
     var compareString="";
-    $('.product-box .compare').on("click", function(){
+    $('.product-box .compare, .product .compare').on("click", function(){
       var productId = $(this).attr("data-product-id");
       var groupId = $(this).attr("data-group-id");
       if($(this).hasClass("selected")) {       
