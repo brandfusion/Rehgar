@@ -57,6 +57,14 @@ var Compare = {
         $(this).remove();
       }
     });
+
+    var target = $('button.compare[data-product-id="' + arg + '"]');
+    target.removeClass("selected");
+    target.find(".fa").removeClass("fa-check-square-o").addClass("fa-square-o");
+
+    if ($('#compareOutterWrapper .item').length == 0) {
+      $('#compareOutterWrapper').removeClass("opened");
+    }
     return;
   },
   add: function(arg) {  
@@ -117,13 +125,17 @@ var Compare = {
       } else {
         $('#compareOutterWrapper').removeClass("opened");
       }
-      
+
       $("#compareWrapper .item").each(function(){
         var id = $(this).attr("data-id");
         var target = $('button.compare[data-product-id="' + id + '"]');
         target.addClass("selected");
         target.find(".fa").removeClass("fa-square-o").addClass("fa-check-square-o");
       });
+
+      if ($('#compareOutterWrapper .item').length == 0) {
+        $('#compareOutterWrapper').addClass("opened");
+      }
 
     }
     
@@ -215,7 +227,10 @@ $(function(){
         Cookies.set('CompareItems', "");
       }
     }
-
+    $('#compareWrapper').on("click", ".remove", function(){
+      var value = $(this).parents(".item").attr("data-id");
+      Compare.remove(value);
+    });
    
     if($("#input-compare-add").length > 0) {
       var groupId= getQueryVariable("dataGroup");
