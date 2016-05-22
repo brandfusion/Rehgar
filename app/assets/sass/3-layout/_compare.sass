@@ -69,6 +69,7 @@
   right: 0
   bottom: 0
   text-align: right
+  height: 65px
   &.opened 
     // display: block 
     transform: translateY(0px)
@@ -80,15 +81,18 @@
     text-align: left
     display: inline-block
     color: #fff
-    width: 200px
+    width: 250px
     font-size: 0.8em
+    position: relative
+    margin-right: 1em
+    padding-right: 2em
     .image 
       width: 50px
     .media-body 
       vertical-align: middle  
     a 
       color: #fff  
-  button 
+  .go-compare 
     float: right
     line-height: 2
     margin-top: 1.5em
@@ -98,5 +102,16 @@
     font-weight: 300
     &:hover 
       background-color: #15246B
+  .remove 
+    position: absolute
+    right: 0
+    top: 0 
+    background-color: transparent
+    color: $secondary
+    transform-origin: 50% 50%
+    &:hover 
+      transform: scale(1.2)
+      
+
 
 
