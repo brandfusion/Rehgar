@@ -6,7 +6,14 @@ var prefix      = require('gulp-autoprefixer');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var browserify = require('browserify');
-
+var babel = require('gulp-babel');
+gulp.task('babel', function(){
+  return gulp.src(['app/assets/jsx/*.jsx'])
+    .pipe(babel({
+      presets: ['react']
+    }))
+    .pipe(gulp.dest('_build/assets/js'));
+  });
 gulp.task('scripts', function() {
   return gulp.src(['app/assets/js/*.js'])
   	.pipe(sourcemaps.init())    
@@ -58,6 +65,7 @@ gulp.task('sass', function () {
 
 gulp.task('watch', function() {
   gulp.watch(['app/assets/sass/*.sass','app/assets/sass/**/*.sass'], ['sass']);
+  gulp.watch(['app/assets/jsx/*.jsx'], ['babel']);
   gulp.watch(['app/assets/js/*.js'], ['scripts']);
   gulp.watch(['app/*.html'], ['copy']);
   gulp.watch(['app/assets/img/*.*'],['copyResources'])

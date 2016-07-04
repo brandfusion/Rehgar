@@ -311,11 +311,13 @@ $(function(){
     
     $("#compareOutterWrapper button").on("click", function(){
       var compareString = "/Default.aspx?ID=2&compare=";
+      var compareItems="";
       $("#compareOutterWrapper .item").each(function(){
         var id = $(this).attr("data-id");
-        compareString += compareString + id + ",";
+        compareItems += id + ",";
 
       });
+      compareString = compareString + compareItems;
       window.location.href = compareString;
 
     });
