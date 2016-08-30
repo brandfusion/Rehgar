@@ -71,3 +71,23 @@
 //   @keyframes #{$animation-name}
 //     @content  
 //     
+
+$smallphone-width: 340px  
+$phone-width: 768px
+$tablet-width: 992px
+$desktop-width: 1200px    
+=tablet 
+ @media (min-width: $phone-width) and (max-width: $tablet-width - 1px) 
+   @content
+=laptop 
+ @media (min-width: $tablet-width) and (max-width: $desktop-width - 1px) 
+   @content
+=desktop 
+ @media (min-width: $desktop-width)
+   @content
+=phone 
+ @media (max-width: $phone-width - 1px) 
+   @content
+=smallphone 
+ @media (min-width: $smallphone-width) and (max-width: 400px) 
+   @content
