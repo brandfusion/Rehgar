@@ -34,7 +34,9 @@ $(function(){
 	 $('.main-slider').unslider({
 	 	arrows: false,
 	 	infinite: true,
-    aniation: 'fade'
+    aniation: 'fade',
+    autoplay: true,
+    delay: 2000
 	 });
 	  $('.middle-slider').unslider({
 	   nav: false,

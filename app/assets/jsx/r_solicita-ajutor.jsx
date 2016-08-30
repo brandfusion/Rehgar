@@ -6,12 +6,16 @@ var DataList = React.createClass({
   },
   componentWillMount: function() {
     var query = "";
-    if (getQueryVariable("UserGroup") !== false) { 
-      query = getQueryVariable("UserGroup");
-     }  
-      source = this.props.source + "&UserGroup=" + query;
-      console.log(source);     
-      $.getJSON(source, function(result) {       
+    if ($('#react-dataList').attr("data-user").length) {
+      query = $('#react-dataList').attr("data-user");
+    }
+    // if (getQueryVariable("UserGroup") !== false) { 
+    //   query = getQueryVariable("UserGroup");
+    //  }  
+      source = this.props.source + "&UserGroup=" + query;        
+      $.getJSON(source, function(result) { 
+        console.log(result.length);
+        console.log(result);
           this.setState({
             data: result
           }); 
@@ -35,8 +39,16 @@ var DataList = React.createClass({
 var DataItem = React.createClass({  
   render: function() {  
     var mailTo = "mailto:" + this.props.source["email"];   
+    var role = "";
+    if (this.props.source["role"] == "98") {
+      role = "Consultant Vanzari"
+    }
+    if (this.props.source["role"] == "99") {
+      role = "Asistenta Vanzari"
+    }
     return (
       <div className="item">
+        <p className="role"><strong>Date contact {role}</strong></p>
         <p className="name"><strong>Nume:</strong> {this.props.source["name"]}</p>
         <a href={mailTo} className="email"><strong>Email:</strong> <span>{this.props.source["email"]}</span></a>
         <p className="phone"><strong>Telefon:</strong> {this.props.source["phone"]}</p>

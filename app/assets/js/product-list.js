@@ -88,19 +88,69 @@ $(function(){
 
     
 
+    // $("#popup-content").on("click",".product-variant", function(){
+    //   value = $(this).attr("data-value");
+    //   name = $(this).html();   
+    //   link = $(this).attr("data-link"); 
+    //   $(this).parents(".variant").find("[data-select]").attr("data-select", value);
+    //   $(this).parents(".variant").find("[data-select]").html(name);
+    //   $(this).parents(".product").find(".add-to-cart").attr("data-variant-id", value);
+    //   $(this).parents(".product").find(".add-to-cart").attr("data-link", link);
+    // });
+
     $("#popup-content").on("click",".product-variant", function(){
       value = $(this).attr("data-value");
       name = $(this).html();   
-      link = $(this).attr("data-link"); 
+      link = $(this).attr("data-link");
+      var um = $(this).data("um");
+      var price = $(this).data("price");
+      var priceMain = $(this).data("pricemain");
+      var priceUnits = $(this).data("priceunits");
+      var currency = $(this).data("currency");
       $(this).parents(".variant").find("[data-select]").attr("data-select", value);
       $(this).parents(".variant").find("[data-select]").html(name);
       $(this).parents(".product").find(".add-to-cart").attr("data-variant-id", value);
       $(this).parents(".product").find(".add-to-cart").attr("data-link", link);
+      
+      $(this).parents(".product").find("[name='EcomOrderLineFieldInput_UM']").val(um);
+      $(this).parents(".product").find("p.price").html(priceMain + "<sup>" + priceUnits + "</sup>" + currency);
+      
     });
+
     $("#popup-content").on("focusout",".quantity input", function(){
       var value=$(this).val();
       $(this).parents(".product").find(".add-to-cart").attr("data-quantity", value);
     });
+    // $("#popup-content").on("click",".add-to-cart", function(e){
+    //   e.preventDefault();
+
+    //   if ($(this).attr("data-variant-id") == "" || $(this).attr("data-variant-id") == null) {
+    //     alertify.alert($(this).attr("data-message"));
+
+    //   } else {
+
+    //     var link = $(this).attr("data-link") + "&CartCmd=add" + "&Quantity=" +  $(this).attr("data-quantity");
+
+    //     $.ajax({
+    //       url: link,
+    //       type: 'POST'
+    //     })
+    //     .done(function(response) {
+    //       console.log("minicart update");
+    //       minicart();
+    //       $('#product-modal').bPopup().close();
+
+    //     })
+    //     .fail(function() {
+    //       console.log("error");
+    //     })
+    //     .always(function() {
+    //       console.log("complete");
+    //     });
+
+    //   }
+    // });
+
     $("#popup-content").on("click",".add-to-cart", function(e){
       e.preventDefault();
 
@@ -108,8 +158,11 @@ $(function(){
         alertify.alert($(this).attr("data-message"));
 
       } else {
-
-        var link = $(this).attr("data-link") + "&CartCmd=add" + "&Quantity=" +  $(this).attr("data-quantity");
+        
+        var formElement = $(this).closest("form");
+        var um = $("[name='EcomOrderLineFieldInput_UM']", formElement).val();
+    var cod = $("[name='EcomOrderLineFieldInput_Cod']", formElement).val();
+        var link = $(this).attr("data-link") + "&CartCmd=add" + "&Quantity=" +  $(this).attr("data-quantity") + "&EcomOrderLineFieldInput_UM=" + um + "&EcomOrderLineFieldInput_Cod=" + cod;
 
         $.ajax({
           url: link,
