@@ -36,7 +36,7 @@ $(function(){
 	 	infinite: true,
     aniation: 'fade',
     autoplay: true,
-    delay: 2000
+    delay: 6000
 	 });
 	  $('.middle-slider').unslider({
 	   nav: false,
