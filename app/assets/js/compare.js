@@ -64,6 +64,7 @@ var Compare = {
 
     if ($('#compareOutterWrapper .item').length == 0) {
       $('#compareOutterWrapper').removeClass("opened");
+      $('.zopim').removeClass("compare-opened");
     }
     return;
   },
@@ -71,7 +72,7 @@ var Compare = {
     var data = this.data;      
     if (data.length >= 3) {
       alert("too many items");
-      return;
+      return false;
     }
     var found = false; 
     this.loadResources();
@@ -122,8 +123,10 @@ var Compare = {
 
       if ($('#compareWrapper .item').length > 0) {
         $('#compareOutterWrapper').addClass("opened");
+        $('.zopim').addClass("compare-opened");
       } else {
         $('#compareOutterWrapper').removeClass("opened");
+        $('.zopim').removeClass("compare-opened");
       }
 
       $("#compareWrapper .item").each(function(){
@@ -135,6 +138,7 @@ var Compare = {
 
       if ($('#compareOutterWrapper .item').length == 0) {
         $('#compareOutterWrapper').addClass("opened");
+         $('.zopim').addClass("compare-opened");
       }
 
     }
@@ -155,7 +159,7 @@ var Compare = {
         _this.buildCompareItem(response[0]);
       });
     }
-    console.log(data);
+    // console.log(data);
     
     
      
@@ -199,8 +203,11 @@ window.addCompare = function(arg){
 
   if ($('#compareWrapper .item').length > 0) {
     $('#compareOutterWrapper').addClass("opened");
+    $('.zopim').addClass("compare-opened");
+    console.log("addcompareopened")
   } else {
     $('#compareOutterWrapper').removeClass("opened");
+     $('.zopim').removeClass("compare-opened");
   }
 }
 function compareList(group, product){
@@ -257,14 +264,15 @@ $(function(){
       .always(function(data) {
         // console.log("complete");
       });
-      $('.compare-add-wrapper button').on("click", function(){
+      $('.compare-add-wrapper button').on("click", function(e){
         var groupId = getQueryVariable("dataGroup");
         var arguments = getQueryVariable("compare") + ',' + $('#input-compare-add').val();
         var link = "/Default.aspx?ID=2&compare=" + arguments  + "&dataGroup=" + groupId;
 
         if($("#compare-list .item").length >= 3) {
+          e.preventDefault();
           var errorMessage = $('#compare-list').attr("data-error-toomanyitems");
-          alert(errorMessage);
+          alert(errorMessage);         
         } else {
           window.location.href = link;
         }
@@ -296,9 +304,16 @@ $(function(){
         //   return false;
         // }
         // addCompare($(this));
-        $(this).addClass("selected");
-        $(this).find('.fa').toggleClass("fa-square-o").toggleClass("fa-check-square-o");
-        Compare.add(productId);
+          var canAdd = Compare.add(productId);
+          console.log(canAdd);
+          if (canAdd != false) {
+            $(this).addClass("selected");
+            $(this).find('.fa').toggleClass("fa-square-o").toggleClass("fa-check-square-o");
+            // Compare.add(productId);
+          }
+         
+       
+        
         // compareString = buildItemsCompareLink();
         // var compareProductsList= compareString.split("compare=")[1].split("&")[0];
         // var compareGroupId= compareString.split("compare=")[1].split("&dataGroup=")[1]

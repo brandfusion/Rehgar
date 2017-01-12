@@ -14,6 +14,19 @@ window.replaceUrlParam = function(url, paramName, paramValue){
     }
     return url + (url.indexOf('?')>0 ? '&' : '?') + paramName + '=' + paramValue 
 }
+window.ObjectInCart = function() {
+  var cookie = Cookies.get('ProductInCart');
+  if (cookie == undefined || cookie == "False") {   
+    alertify.alert("Aveti produse in cos.");
+    Cookies.set('ProductInCart', 'True', { expires: 1 });
+    return false;
+  } 
+  if (cookie == "True") {
+    return false;
+  }
+ 
+  return
+}
 window.minicart = function() {
   $.ajax({
     url: '/Default.aspx?ID=81',
@@ -23,13 +36,37 @@ window.minicart = function() {
   })
   .done(function(response) {
     var data = response;
-    console.log(data);
+    // console.log(data);
+    if(data[0].quantity > 0) {
+      ObjectInCart();
+    }
     $('[data-minicart-quantity]').html(data[0].lines);
     $('[data-minicart-price]').html(data[0].price);
     $('[data-minicart-currency]').html(data[0].currency);
   });
 }
 $(function(){	
+
+  $('.header-logout').on("click", function(e){
+    e.preventDefault();
+    var link = $(this).attr("href");
+    Cookies.remove('ProductInCart');
+    console.log(link);
+    window.location.href = link;
+
+  });
+
+  $('.reorder-action').on("click", function(e){
+    e.preventDefault();
+    var link = $(this).attr("href");
+    alertify.confirm('Atentie! Produsele in cos vor fi sterse.', function(){ window.location.href = link; }, function(){ return false;});
+  });
+  if($(window).width() < 1199 && $(window).width() > 768) {
+    $('.category-trigger').on("click", function(){
+    
+      $(this).parent().find(".navigation-main").fadeToggle();
+    });
+  }
 	
 	 $('.main-slider').unslider({
 	 	arrows: false,

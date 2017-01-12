@@ -14,10 +14,27 @@ var DataList = React.createClass({
     //  }  
       source = this.props.source + "&UserGroup=" + query;        
       $.getJSON(source, function(result) { 
-        console.log(result.length);
+        // console.log(result.length);
         console.log(result);
+        var data = result
+        filteredresult = _.reduce(data, function(result, value, key) {
+          var prev = key - 1;
+          if(data[prev] != undefined ) {
+           
+            var addressCurrent = data[key].name;                   
+            var addressPrevious = data[prev].name;     
+            if(addressCurrent !== addressPrevious) {            
+              return result = _.concat(result, value);
+            } else {
+              return result;
+            }
+          } else {
+            return result = _.concat(result, value);
+          }
+        }, []);
+        console.log(filteredresult)
           this.setState({
-            data: result
+            data: filteredresult
           }); 
       }.bind(this));
    
