@@ -47,6 +47,13 @@ window.minicart = function() {
 }
 $(function(){	
 
+  $('.header-search form').on("submit", function(e){
+    if ($(this).find("input").val() == "") {
+      e.preventDefault();
+    }
+
+
+  });
   $('.header-logout').on("click", function(e){
     e.preventDefault();
     var link = $(this).attr("href");
@@ -56,7 +63,7 @@ $(function(){
 
   });
 
-  $('.reorder-action').on("click", function(e){
+  $('.reorder-action, .modifica-comanda').on("click", function(e){
     e.preventDefault();
     var link = $(this).attr("href");
     alertify.confirm('Atentie! Produsele in cos vor fi sterse.', function(){ window.location.href = link; }, function(){ return false;});

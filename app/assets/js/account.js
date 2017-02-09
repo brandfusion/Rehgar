@@ -14,7 +14,7 @@ $(function(){
       var id = $(this).closest("div").children("input").attr("id");
       var quantity = $(this).closest("div").children("input").val();
       
-      window.location.href = "Default.aspx?CartCmd=updateorderlines&OrderContext=ORDERCONTEXT1&" + id + "=" + quantity
+      window.location.href = "Default.aspx?CartCmd=updateorderlines&" + id + "=" + quantity
       
   });
   

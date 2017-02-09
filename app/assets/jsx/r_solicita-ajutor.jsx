@@ -57,10 +57,10 @@ var DataItem = React.createClass({
   render: function() {  
     var mailTo = "mailto:" + this.props.source["email"];   
     var role = "";
-    if (this.props.source["role"] == "98") {
+    if (this.props.source["role"] == "99") {
       role = "Consultant Vanzari"
     }
-    if (this.props.source["role"] == "99") {
+    if (this.props.source["role"] == "98") {
       role = "Asistenta Vanzari"
     }
     return (
