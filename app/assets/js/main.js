@@ -66,7 +66,7 @@ $(function(){
   $('.reorder-action, .modifica-comanda').on("click", function(e){
     e.preventDefault();
     var link = $(this).attr("href");
-    alertify.confirm('Atentie! Produsele in cos vor fi sterse.', function(){ window.location.href = link; }, function(){ return false;});
+    alertify.confirm('Atentie! Daca aveti produse in cos, acestea vor fi sterse.', function(){ window.location.href = link; }, function(){ return false;});
   });
   if($(window).width() < 1199 && $(window).width() > 768) {
     $('.category-trigger').on("click", function(){
