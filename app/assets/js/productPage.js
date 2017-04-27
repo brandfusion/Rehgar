@@ -57,7 +57,7 @@ $(function(){
 		alertify.logPosition("center center");
 		alertify.alert("Alegeti o optiune");
 	});
-	if($('.main-image').length > 0) {
+	if($('.main-image').length > 0 && $(window).width() >= 768) {
 		$('.main-image').zoom();
 	}
 	if($("#input-compare").length > 0) {

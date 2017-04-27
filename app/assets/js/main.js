@@ -22,12 +22,11 @@ window.ObjectInCart = function() {
     return false;
   } 
   if (cookie == "True") {
-    return false;
-  }
- 
-  return
+    return true;
+  }  
 }
-window.minicart = function() {
+window.cartHasItems = function(){
+  var deferred = $.Deferred();
   $.ajax({
     url: '/Default.aspx?ID=81',
     type: 'GET',
@@ -38,14 +37,71 @@ window.minicart = function() {
     var data = response;
     // console.log(data);
     if(data[0].quantity > 0) {
-      ObjectInCart();
-    }
+      // ObjectInCart();      
+      deferred.resolve(true);      
+    } else {
+      deferred.resolve(false);     
+    }  
+
+   
+  });
+
+  return deferred.promise();
+
+};
+// window.isLoggedIn =  function(){
+//   var cookie = Cookies.get('UserIsLoggedIn');
+//   if (cookie == undefined || cookie == "False") { 
+//     Cookies.set('UserIsLoggedIn', 'True', { expires: 1 });
+//     return false;
+//   } 
+//   if (cookie == "True") {
+//     return true;
+//   }
+// }
+window.minicart = function() {
+  $.ajax({
+    url: '/Default.aspx?ID=81',
+    type: 'GET',
+    dataType: 'json',
+    cache: false
+  })
+  .done(function(response) {
+    var data = response;
+    // console.log(data);
+    // if(data[0].quantity > 0) {
+    //   ObjectInCart();
+    // }
     $('[data-minicart-quantity]').html(data[0].lines);
     $('[data-minicart-price]').html(data[0].price);
     $('[data-minicart-currency]').html(data[0].currency);
   });
 }
 $(function(){	
+  var alreadyLoggedIn = Cookies.get("alreadyLoggedIn") == "True" ? true : false;
+ 
+  
+ 
+
+  if (alreadyLoggedIn == false) {
+    $.when(cartHasItems()).then(function(response){    
+      var hasItemsInCart = response;
+      var isLoggedIn = $('[data-IsLoggedIn]').attr("data-IsLoggedIn") == "True" ? true : false;
+      if(isLoggedIn && hasItemsInCart) {
+        alertify.alert("Aveti produse in cos.");
+      }
+      if (isLoggedIn === true) {
+        Cookies.set('alreadyLoggedIn', 'True', { expires: 1 });
+      } else {
+        Cookies.remove('alreadyLoggedIn');
+      }
+     
+    });
+  } 
+  
+
+
+
 
   $('.header-search form').on("submit", function(e){
     if ($(this).find("input").val() == "") {
@@ -57,7 +113,7 @@ $(function(){
   $('.header-logout').on("click", function(e){
     e.preventDefault();
     var link = $(this).attr("href");
-    Cookies.remove('ProductInCart');
+    Cookies.remove('alreadyLoggedIn');
     console.log(link);
     window.location.href = link;
 
